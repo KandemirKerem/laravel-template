@@ -16,7 +16,6 @@ class AuthController extends Controller
     public function store(Request $request){
 
 
-
         $request->session()->flush();
         $request->session()->regenerate();
 
@@ -29,11 +28,11 @@ class AuthController extends Controller
 
         $user = User::create($attributes);
 
-
+        event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect()->route('homepage');
+        return redirect()->route('verification.notice');
 
     }
 }

@@ -12,10 +12,10 @@
                 </svg>
             </button>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-                <x-templates.navlink href="{{--route('homepage')--}}" :active="request()->routeIs('homepage')">Homepage</x-templates.navlink>
+                <x-templates.navlink href="{{route('homepage')}}" :active="request()->routeIs('homepage')">Homepage</x-templates.navlink>
                 <x-templates.navlink href="{{--route('blogs.index')--}}" :active="request()->is('blogs*')">Index</x-templates.navlink>
                 <x-templates.navlink href="{{--route('dashboard.view')--}}" :active="request()->is('dashboard')">CRUD</x-templates.navlink>
-                <x-templates.navlink href="{{--route('profile')--}}" :active="request()->is('profile')">Profile</x-templates.navlink>
+                <x-templates.navlink href="{{route('profile')}}" :active="request()->is('profile')">Profile</x-templates.navlink>
             </nav>
             <div class="hidden md:flex items-center gap-3">
                 @guest
@@ -34,10 +34,10 @@
         </div>
         <div id="mobile-menu" class="md:hidden hidden flex-col gap-3 pb-4 text-sm font-semibold text-slate-700 transition-all duration-200 origin-top scale-95 opacity-0">
             <div class="grid gap-2">
-                <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{--route('homepage')--}}">Homepage</a>
+                <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('homepage')}}">Homepage</a>
                 <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{--route('blogs.index')--}}">Index</a>
                 <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{--route('dashboard.view')--}}">CRUD</a>
-                <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{--route('profile')--}}">Profile</a>
+                <a class="px-4 py-3 rounded-xl border border-slate-200 bg-white" href="{{route('profile')}}">Profile</a>
             </div>
             <div class="grid gap-2">
                 @guest
@@ -45,7 +45,7 @@
                     <a href="{{route('register')}}" class="px-4 py-3 rounded-xl bg-base text-white">Register</a>
                 @endguest
                 @auth
-                    <form class="mt-4" method="post" action="{{--route('logout')--}}">
+                    <form class="mt-4" method="post" action="{{route('logout')}}">
                         @csrf
                         <button type="submit" class="cursor-pointer px-5 py-2.5 text-sm font-semibold text-red-600 bg-red-50 border border-red-100 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-200 shadow-sm active:scale-95">
                             Logout

@@ -20,3 +20,5 @@
     </div>
 </footer>
 
+@livewireScripts
+

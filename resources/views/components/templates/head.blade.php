@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template | {{ $title }} </title>
     @vite('resources/css/app.css')
+    @livewireStyles
 
 </head>
 <body class="bg-white text-base font-sans">
